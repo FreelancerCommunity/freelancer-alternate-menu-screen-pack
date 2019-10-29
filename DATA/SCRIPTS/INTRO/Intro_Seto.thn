@@ -1,9 +1,10 @@
-duration = 361.872
+--For orientation of objects, use this link to quickly do the maths on how much to rotate things: https://www.andre-gaschler.com/rotationconverter/
 
+duration = 361.872
 entities =
 {
 	{
-		entity_name = "Scene_Untitled",
+		entity_name = "scene_seto",
 		type = SCENE,
 		template_name = "",
 		lt_grp = 0,
@@ -24,7 +25,41 @@ entities =
 		ambient = { 128, 128, 128 }
 	},
 	{
-		entity_name = "Light_1",
+		entity_name = "camera_1",
+		type = CAMERA,
+		template_name = "",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { -2082.574707, -1028.601685, 9368.024414 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 1, 0 },
+				{ 0, 0, 1 }
+			}
+		},
+		cameraprops =
+		{
+			fovh = 30,
+			hvaspect = 1.333333,
+			nearplane = 1,
+			farplane = 1000000
+		}
+	},
+	{
+		entity_name = "monitor_1",
+		type = MONITOR,
+		template_name = "",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0
+	},
+	--Lighting is defined below here.
+	{
+		entity_name = "light_1",
 		type = LIGHT,
 		template_name = "",
 		lt_grp = 0,
@@ -56,32 +91,7 @@ entities =
 		}
 	},
 	{
-		entity_name = "Camera_1",
-		type = CAMERA,
-		template_name = "",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0,
-		spatialprops =
-		{
-			pos = { -2082.574707, -1028.601685, 9368.024414 },
-			orient =
-			{
-				{ 1, 0, 0 },
-				{ 0, 1, 0 },
-				{ 0, 0, 1 }
-			}
-		},
-		cameraprops =
-		{
-			fovh = 30,
-			hvaspect = 1.333333,
-			nearplane = 1,
-			farplane = 1000000
-		}
-	},
-	{
-		entity_name = "Light_2",
+		entity_name = "light_2",
 		type = LIGHT,
 		template_name = "",
 		lt_grp = 0,
@@ -112,8 +122,9 @@ entities =
 			atten = { 2, 0, 4e-006 }
 		}
 	},
+	--Static and semi-static scene elements are defined below here.
 	{
-		entity_name = "planet_mercury_200_2",
+		entity_name = "planet_gasblucld",
 		type = COMPOUND,
 		template_name = "Planet_Gasblucld_1000",
 		lt_grp = 0,
@@ -136,7 +147,7 @@ entities =
 		}
 	},
 	{
-		entity_name = "planet_watblucld_1500_4",
+		entity_name = "planet_gasorgcld",
 		type = COMPOUND,
 		template_name = "Planet_GasOrgCld_5000",
 		lt_grp = 0,
@@ -159,53 +170,7 @@ entities =
 		}
 	},
 	{
-		entity_name = "planet_ice_200_3",
-		type = COMPOUND,
-		template_name = "ku_battleship",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0,
-		flags = LIT_DYNAMIC,
-		spatialprops =
-		{
-			pos = { -1700, -1000, 8000 },
-			orient =
-			{
-				{ 0, 0, 1 },
-				{ 0, 1, 0 },
-				{ 1, 0, 0 }
-			}
-		},
-		userprops =
-		{
-			category = "Spaceship"
-		}
-	},
-	{
-		entity_name = "ring_2",
-		type = PSYS,
-		template_name = "ring",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0,
-		flags = LIT_DYNAMIC + LIT_AMBIENT,
-		spatialprops =
-		{
-			pos = { 0, 0, 0 },
-			orient =
-			{
-				{ 1, 0, 0 },
-				{ 0, 1, 0 },
-				{ 0, 0, 1 }
-			}
-		},
-		psysprops =
-		{
-			sparam = 0
-		}
-	},
-	{
-		entity_name = "starsphere_Li04_4",
+		entity_name = "starsphere_ku02",
 		type = COMPOUND,
 		template_name = "starsphere_Ku02",
 		lt_grp = 0,
@@ -228,53 +193,31 @@ entities =
 		}
 	},
 	{
-		entity_name = "Intro_waterplanet_planetstorm_4",
-		type = PSYS,
-		template_name = "Intro_waterplanet_planetstorm",
+		entity_name = "ku_battleship",
+		type = COMPOUND,
+		template_name = "ku_battleship",
 		lt_grp = 0,
 		srt_grp = 0,
 		usr_flg = 0,
-		flags = LIT_DYNAMIC + LIT_AMBIENT,
+		flags = LIT_DYNAMIC,
 		spatialprops =
 		{
-			pos = { 1460.897339, -3145.810547, -3228.390625 },
+			pos = { -1700, -1000, 8000 },
 			orient =
 			{
-				{ 0.627428, 0, -0.778674 },
+				{ 0, 0, -1 },
 				{ 0, 1, 0 },
-				{ 0.778674, 0, 0.627428 }
+				{ 1, 0, 0 }
 			}
 		},
-		psysprops =
+		userprops =
 		{
-			sparam = 0
+			category = "Spaceship"
 		}
 	},
+	--Effects are defined below here.
 	{
-		entity_name = "Intro_waterplanet_ring_5",
-		type = PSYS,
-		template_name = "Intro_waterplanet_ring",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0,
-		flags = LIT_DYNAMIC + LIT_AMBIENT,
-		spatialprops =
-		{
-			pos = { 2000, 0, -3000 },
-			orient =
-			{
-				{ 1, 0, 0 },
-				{ 0, 1, 0 },
-				{ 0, 0, 1 }
-			}
-		},
-		psysprops =
-		{
-			sparam = 0
-		}
-	},
-	{
-		entity_name = "Intro_waterplanet_sun_6",
+		entity_name = "rtc_ku02_sun",
 		type = PSYS,
 		template_name = "rtc_ku02_sun",
 		lt_grp = 0,
@@ -283,7 +226,7 @@ entities =
 		flags = LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops =
 		{
-			pos = { -6000, 1500, 0 },
+			pos = { -6000, 500, 700 },
 			orient =
 			{
 				{ 1, 0, 0 },
@@ -297,7 +240,7 @@ entities =
 		}
 	},
 	{
-		entity_name = "Intro_waterplanet_sun#1_7",
+		entity_name = "rtc_ku03_sun",
 		type = PSYS,
 		template_name = "rtc_ku03_sun",
 		lt_grp = 0,
@@ -319,46 +262,42 @@ entities =
 			sparam = 0
 		}
 	},
-	{
-		entity_name = "Monitor_2",
-		type = MONITOR,
-		template_name = "",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0
-	},
-	{
-		entity_name = "debris_small1_2",
-		type = COMPOUND,
-		template_name = "debris_small1",
-		lt_grp = 0,
-		srt_grp = 0,
-		usr_flg = 0,
-		flags = LIT_DYNAMIC,
-		spatialprops =
-		{
-			pos = { -1424.714111, 0, -5417.51416 },
-			orient =
-			{
-				{ 1, 0, 0 },
-				{ 0, 1, 0 },
-				{ 0, 0, 1 }
-			}
-		},
-		userprops =
-		{
-			category = "Asteroid"
-		}
-	}
 }
 
 events =
 {
 	{
 		0,
+		SET_CAMERA,
+		{
+			"monitor_1",
+			"camera_1"
+		}
+	},
+	{
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
-			"planet_watblucld_1500_4"
+			"planet_gasorgcld"
+		},
+		{
+			duration = 360.1,
+			target_type = ROOT,
+			spatialprops =
+			{
+				axisrot =
+				{
+					360,
+					NEG_Y_AXIS
+				}
+			}
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"planet_gasblucld"
 		},
 		{
 			duration = 360.1,
@@ -377,88 +316,7 @@ events =
 		0,
 		START_PSYS,
 		{
-			"ring_2"
-		},
-		{
-			duration = 360
-		}
-	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"ring_2",
-			"planet_watblucld_1500_4"
-		},
-		{
-			duration = 360,
-			offset = { 0, 0, 0 },
-			up = Y_AXIS,
-			front = NEG_Z_AXIS,
-			target_part = "",
-			target_type = ROOT,
-			flags = POSITION
-		}
-	},
-	{
-		0,
-		START_PSYS,
-		{
-			"Intro_waterplanet_planetstorm_4"
-		},
-		{
-			duration = 360
-		}
-	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"Intro_waterplanet_planetstorm_4",
-			"planet_watblucld_1500_4"
-		},
-		{
-			duration = 360,
-			offset = { 0, 0, 0 },
-			up = Y_AXIS,
-			front = NEG_Z_AXIS,
-			target_part = "",
-			target_type = ROOT,
-			flags = POSITION
-		}
-	},
-	{
-		0,
-		START_PSYS,
-		{
-			"Intro_waterplanet_ring_5"
-		},
-		{
-			duration = 360
-		}
-	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"Intro_waterplanet_ring_5",
-			"planet_watblucld_1500_4"
-		},
-		{
-			duration = 360,
-			offset = { 0, 0, 0 },
-			up = Y_AXIS,
-			front = NEG_Z_AXIS,
-			target_part = "",
-			target_type = ROOT,
-			flags = POSITION
-		}
-	},
-	{
-		0,
-		START_PSYS,
-		{
-			"Intro_waterplanet_sun_6"
+			"rtc_ku02_sun"
 		},
 		{
 			duration = 360
@@ -468,35 +326,10 @@ events =
 		0,
 		START_PSYS,
 		{
-			"Intro_waterplanet_sun#1_7"
+			"rtc_ku03_sun"
 		},
 		{
 			duration = 360
 		}
 	},
-	{
-		0,
-		SET_CAMERA,
-		{
-			"Monitor_2",
-			"Camera_1"
-		}
-	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"Intro_waterplanet_sun#1_7",
-			"debris_small1_2"
-		},
-		{
-			duration = 360,
-			offset = { 0, 0, 250 },
-			up = Y_AXIS,
-			front = NEG_Z_AXIS,
-			target_part = "",
-			target_type = ROOT,
-			flags = POSITION
-		}
-	}
 }
