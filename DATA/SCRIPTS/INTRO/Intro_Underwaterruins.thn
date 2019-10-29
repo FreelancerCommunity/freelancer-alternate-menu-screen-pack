@@ -1,592 +1,337 @@
 --For orientation of objects, use this link to quickly do the maths on how much to rotate things: https://www.andre-gaschler.com/rotationconverter/
 
-duration=500.622
-entities={
+duration = 500.622
+entities =
+{
 	{
-		entity_name="scene_waterruins", --Defines the scene as well as ambient lighting. Needed for the script to function correctly. In this script we apply a fog effect to the scene using the events section.
-		type=SCENE,
-		template_name="",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
+		entity_name = "scene_waterruins", --Defines the scene as well as ambient lighting. Needed for the script to function correctly. In this script we apply a fog effect to the scene using the events section.
+		type = SCENE,
+		template_name = "",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 0, 0, 0 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 1, 0 },
+				{ 0, 0, 1 }
 			}
 		},
-		up=Y_AXIS,
-		front=Z_AXIS,
-		ambient={
-			0,
-			0,
-			0
+		up = Y_AXIS,
+		front = Z_AXIS,
+		ambient = { 0, 0, 0 }
+	},
+	{
+		entity_name = "camera_1", --Defines the primary camera perspective for the menu screen. You don't have to define a camera, but it will allow you to adjust things like field of view, and will allow you to move the camera around.
+		type = CAMERA,
+		template_name = "",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 0, 0, 0 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 1, 0 },
+				{ 0, 0, 1 }
+			}
+		},
+		cameraprops =
+		{
+			fovh = 35,
+			hvaspect = 1.333333,
+			nearplane = 1,
+			farplane = 1000000
 		}
 	},
 	{
-		entity_name="camera_1", --Defines the primary camera perspective for the menu screen. You don't have to define a camera, but it will allow you to adjust things like field of view, and will allow you to move the camera around.
-		type=CAMERA,
-		template_name="",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
-			}
-		},
-		cameraprops={
-			fovh=35,
-			hvaspect=1.333333,
-			nearplane=1,
-			farplane=1000000
-		}
-	},
-	{
-		entity_name="monitor_1", --Defines primary monitor. This must be set as the camera in events.
-		type=MONITOR,
-		template_name="",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0
+		entity_name = "monitor_1", --Defines primary monitor. This must be set as the camera in events.
+		type = MONITOR,
+		template_name = "",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0
 	},
 	
 	--Lighting is defined below here.
 	{
-		entity_name="spot_watertop", --Lights ocean_green_top.
-		type=LIGHT,
-		template_name="",
-		lt_grp=10, --Take note of this. Only objects in the same light group will be effected by this source. We use this quite a bit in the scene to light up the ocean effectively.
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				1.403186,
-				18.746868,
-				-2.527359
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				},
-				{
-					0,
-					-1,
-					0
-				}
+		entity_name = "spot_watertop", --Lights ocean_green_top.
+		type = LIGHT,
+		template_name = "",
+		lt_grp = 10, --Take note of this. Only objects in the same light group will be effected by this source. We use this quite a bit in the scene to light up the ocean effectively.
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 1.403186, 18.746868, -2.527359 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 0, 1 },
+				{ 0, -1, 0 }
 			}
 		},
-		lightprops={
-			on=Y,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.192157,
-				0.313726,
-				0.341176
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0.027451,
-				0.027451,
-				0.027451
-			},
-			direction={
-				0,
-				0,
-				1
-			},
-			range=200,
-			cutoff=300.999878,
-			type=L_POINT, --Valid types are L_DIRECT, L_SPOT, L_POINT and L_LINEAR.
-			theta=180,
-			atten={
-				1,
-				0,
-				1e-008
-			}
+		lightprops =
+		{
+			on = Y,
+			color = { 255, 255, 255 },
+			diffuse = { 0.192157, 0.313726, 0.341176 },
+			specular = { 0, 0, 0 },
+			ambient = { 0.027451, 0.027451, 0.027451 },
+			direction = { 0, 0, 1 },
+			range = 200,
+			cutoff = 300.999878,
+			type = L_POINT, --Valid types are L_DIRECT, L_SPOT, L_POINT and L_LINEAR.
+			theta = 180,
+			atten = { 1, 0, 0 }
 		}
 	},
 	{
-		entity_name="ambi_waterreflect", --Lights ocean_green_btm. 
-		type=LIGHT,
-		template_name="",
-		lt_grp=3,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				1.262945,
-				-72.30034600000001,
-				-21.188942
-			},
-			orient={
-				{
-					-0.525322,
-					-0.07198,
-					0.847854
-				},
-				{
-					0.801221,
-					0.293651,
-					0.521358
-				},
-				{
-					-0.2865,
-					0.953199,
-					-0.09658899999999999
-				}
+		entity_name = "ambi_waterreflect", --Lights ocean_green_btm. 
+		type = LIGHT,
+		template_name = "",
+		lt_grp = 3,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 1.262945, -72.300346, -21.188942 },
+			orient =
+			{
+				{ -0.525322, -0.07198, 0.847854 },
+				{ 0.801221, 0.293651, 0.521358 },
+				{ -0.2865, 0.953199, -0.096589 }
 			}
 		},
-		lightprops={
-			on=Y,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.207843,
-				0.490196,
-				0.462745
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0,
-				0,
-				0
-			},
-			direction={
-				0,
-				0,
-				1
-			},
-			range=20,
-			cutoff=30.99996,
-			type=L_DIRECT,
-			theta=20.999987,
-			atten={
-				1,
-				0,
-				0.0399999991
-			}
+		lightprops =
+		{
+			on = Y,
+			color = { 255, 255, 255 },
+			diffuse = { 0.207843, 0.490196, 0.462745 },
+			specular = { 0, 0, 0 },
+			ambient = { 0, 0, 0 },
+			direction = { 0, 0, 1 },
+			range = 20,
+			cutoff = 30.99996,
+			type = L_DIRECT,
+			theta = 20.999987,
+			atten = { 1, 0, 0.04 }
 		}
 	},
 	{
-		entity_name="ambi_water_ruins", --Lights water_ruins_static.
-		type=LIGHT,
-		template_name="",
-		lt_grp=3,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				1.262945,
-				-72.30034600000001,
-				-21.188942
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					0.166041,
-					0.986119
-				},
-				{
-					0,
-					-0.986119,
-					0.166041
-				}
+		entity_name = "ambi_water_ruins", --Lights water_ruins_static.
+		type = LIGHT,
+		template_name = "",
+		lt_grp = 3,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 1.262945, -72.300346, -21.188942 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 0.166041, 0.986119 },
+				{ 0, -0.986119, 0.166041 }
 			}
 		},
-		lightprops={
-			on=Y,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.321569,
-				0.329412,
-				0.329412
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0.058824,
-				0.086275,
-				0.09411799999999999
-			},
-			direction={
-				0,
-				0,
-				1
-			},
-			range=20,
-			cutoff=30.99996,
-			type=L_DIRECT,
-			theta=20.999987,
-			atten={
-				1,
-				0,
-				0.0399999991
-			}
+		lightprops =
+		{
+			on = Y,
+			color = { 255, 255, 255 },
+			diffuse = { 0.321569, 0.329412, 0.329412 },
+			specular = { 0, 0, 0 },
+			ambient = { 0.058824, 0.086275, 0.094118 },
+			direction = { 0, 0, 1 },
+			range = 20,
+			cutoff = 30.99996,
+			type = L_DIRECT,
+			theta = 20.999987,
+			atten = { 1, 0, 0.04 }
 		}
 	},
 	{
-		entity_name="ambi_skydome", --Lights skydome_clouds_wavy, providing it with ambient color.
-		type=LIGHT,
-		template_name="",
-		lt_grp=24,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-				56.369728,
-				-7295.395508,
-				-38.371586
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					0,
-					-1
-				},
-				{
-					0,
-					1,
-					0
-				}
+		entity_name = "ambi_skydome", --Lights skydome_clouds_wavy, providing it with ambient color.
+		type = LIGHT,
+		template_name = "",
+		lt_grp = 24,
+		srt_grp = 0,
+		usr_flg = 0,
+		spatialprops =
+		{
+			pos = { 56.369728, -7295.395508, -38.371586 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 0, -1 },
+				{ 0, 1, 0 }
 			}
 		},
-		lightprops={
-			on=Y,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.09411799999999999,
-				0.494118,
-				0.486275
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0,
-				0,
-				0
-			},
-			direction={
-				0,
-				0,
-				1
-			},
-			range=200000,
-			cutoff=180.999832,
-			type=L_SPOT,
-			theta=80.999977,
-			atten={
-				1,
-				0,
-				1e-009
-			}
+		lightprops =
+		{
+			on = Y,
+			color = { 255, 255, 255 },
+			diffuse = { 0.094118, 0.494118, 0.486275 },
+			specular = { 0, 0, 0 },
+			ambient = { 0, 0, 0 },
+			direction = { 0, 0, 1 },
+			range = 200000,
+			cutoff = 180.999832,
+			type = L_SPOT,
+			theta = 80.999977,
+			atten = { 1, 0, 0 }
 		}
 	},
 	--Static and semi-static entities are defined below here.
 	{
-		entity_name="water_ruins_static",
-		type=COMPOUND,
-		template_name="Dyson_City",
-		lt_grp=3,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,  --Valid flags are LIT_DYNAMIC and LIT_AMBIENT. You can use both at the same time if required.
-		spatialprops={
-			pos={
-				0.642578,
-				-150.847229,
-				-3500.648438
-			},
-			orient={
-				{
-					-0.888476,
-					0.074153,
-					0.452892
-				},
-				{
-					0.05257,
-					0.996808,
-					-0.060079
-				},
-				{
-					-0.455901,
-					-0.02957,
-					-0.889539
-				}
+		entity_name = "water_ruins_static",
+		type = COMPOUND,
+		template_name = "Dyson_City",
+		lt_grp = 3,
+		srt_grp = 0,
+		usr_flg = 0,
+		flags = LIT_DYNAMIC,  --Valid flags are LIT_DYNAMIC and LIT_AMBIENT. You can use both at the same time if required.
+		spatialprops =
+		{
+			pos = { 0.642578, -150.847229, -3500.648438 },
+			orient =
+			{
+				{ -0.888476, 0.074153, 0.452892 },
+				{ 0.05257, 0.996808, -0.060079 },
+				{ -0.455901, -0.02957, -0.889539 }
 			}
 		},
-		userprops={
-			category="Solar" --Valid categories are Solar, Spaceship, Prop, Equipment and Room.
+		userprops =
+		{
+			category = "Solar" --Valid categories are Solar, Spaceship, Prop, Equipment and Room.
 		}
 	},
 	{
-		entity_name="ocean_green_btm",
-		type=COMPOUND,
-		template_name="ocean_green_btm.3db",
-		lt_grp=10,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
-		spatialprops={
-			pos={
-				0,
-				-179.58429,
-				0
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
+		entity_name = "ocean_green_btm",
+		type = COMPOUND,
+		template_name = "ocean_green_btm.3db",
+		lt_grp = 10,
+		srt_grp = 0,
+		usr_flg = 0,
+		flags = LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops =
+		{
+			pos = { 0, -179.58429, 0 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 1, 0 },
+				{ 0, 0, 1 }
 			}
 		},
-		userprops={
-			category="Prop"
+		userprops =
+		{
+			category = "Prop"
 		}
 	},
 	{
-		entity_name="ocean_green_top",
-		type=COMPOUND,
-		template_name="ocean_green_top.3db",
-		lt_grp=10,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
-		spatialprops={
-			pos={
-				0,
-				-89.67590300000001,
-				-8.387741
-			},
-			orient={
-				{
-					-1,
-					0,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				},
-				{
-					0,
-					1,
-					0
-				}
+		entity_name = "ocean_green_top",
+		type = COMPOUND,
+		template_name = "ocean_green_top.3db",
+		lt_grp = 10,
+		srt_grp = 0,
+		usr_flg = 0,
+		flags = LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops =
+		{
+			pos = { 0, -89.675903, -8.387741 },
+			orient =
+			{
+				{ -1, 0, 0 },
+				{ 0, 0, 1 },
+				{ 0, 1, 0 }
 			}
 		},
-		userprops={
-			category="Prop"
+		userprops =
+		{
+			category = "Prop"
 		}
 	},
 	{
-		entity_name="starsphere_rh04_stars", --Defines the backdrop. Pick from Freelancer\DATA\SOLAR\STARSPHERE.
-		type=COMPOUND,
-		template_name="starsphere_Rh04_stars",
-		lt_grp=25,
-		srt_grp=-101,
-		usr_flg=1,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{
-					0.009004,
-					-0.999959,
-					0
-				},
-				{
-					0.999959,
-					0.009004,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
+		entity_name = "starsphere_rh04_stars", --Defines the backdrop. Pick from Freelancer\DATA\SOLAR\STARSPHERE.
+		type = COMPOUND,
+		template_name = "starsphere_Rh04_stars",
+		lt_grp = 25,
+		srt_grp = -101,
+		usr_flg = 1,
+		flags = LIT_DYNAMIC,
+		spatialprops =
+		{
+			pos = { 0, 0, 0 },
+			orient =
+			{
+				{ 0.009004, -0.999959, 0 },
+				{ 0.999959, 0.009004, 0 },
+				{ 0, 0, 1 }
 			}
 		},
-		userprops={
-			category="Prop",
-			No_Fog="Y"
+		userprops =
+		{
+			category = "Prop",
+			No_Fog = "Y"
 		}
 	},
 	{
-		entity_name="skydome_clouds_wavy",
-		type=COMPOUND,
-		template_name="skydome_clouds_wavy",
-		lt_grp=24,
-		srt_grp=-98,
-		usr_flg=2,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={
-				0,
-				1000,
-				0
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0.0000000,
-					0.9950042,
-					-0.0998334
-				},
-				{
-					 0.0000000,
-					 0.0998334,
-					 0.9950042
-				}
+		entity_name = "skydome_clouds_wavy",
+		type = COMPOUND,
+		template_name = "skydome_clouds_wavy",
+		lt_grp = 24,
+		srt_grp = -98,
+		usr_flg = 2,
+		flags = LIT_DYNAMIC,
+		spatialprops =
+		{
+			pos = { 0, 1000, 0 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0.0000000, 0.9950042, -0.0998334 },
+				{ 0.0000000, 0.0998334, 0.9950042 }
 			}
 		},
-		userprops={
-			category="Prop"
+		userprops =
+		{
+			category = "Prop"
 		}
 	},
 	--Effects are defined below here.
 	{
-		entity_name="rtc_moon",
-		type=PSYS,
-		template_name="rtc_moon",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
-		spatialprops={
-			pos={
-				1805.579147,
-				430.664246,
-				-2900.755455
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
+		entity_name = "rtc_moon",
+		type = PSYS,
+		template_name = "rtc_moon",
+		lt_grp = 0,
+		srt_grp = 0,
+		usr_flg = 0,
+		flags = LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops =
+		{
+			pos = { 1805.579147, 430.664246, -2900.755455 },
+			orient =
+			{
+				{ 1, 0, 0 },
+				{ 0, 1, 0 },
+				{ 0, 0, 1 }
 			}
 		},
-		psysprops={
-			sparam=0
+		psysprops =
+		{
+			sparam = 0
 		}
 	}
 }
 
-events={
+events =
+{
 	{
 		0, --This value determines the time at which the event happens in the scene.
 		SET_CAMERA, --Sets Monitor_1 as the camera.
@@ -602,7 +347,7 @@ events={
 			"rtc_moon"
 		},
 		{
-			duration=500.622
+			duration = 500.622
 		}
 	},
 	{
@@ -612,37 +357,26 @@ events={
 			"scene_waterruins"
 		},
 		{
-			duration=0,
-			fogprops={
-				fogon=Y,
-				fogcolor={
-					221,
-					221,
-					221
-				},
-				fogmode=F_LINEAR,
-				fogstart=0,
-				fogend=100000,
-				fogdensity=0
+			duration = 0,
+			fogprops =
+			{
+				fogon = Y,
+				fogcolor = { 221, 221, 221 },
+				fogmode = F_LINEAR,
+				fogstart = 0,
+				fogend = 100000,
+				fogdensity = 0
 			},
-			param_curve={
-				CLSID="FreeFormPCurve",
-				points={
-					{
-						0,
-						0,
-						0,
-						0.212121
-					},
-					{
-						1,
-						1,
-						3.368421,
-						0
-					}
+			param_curve =
+			{
+				CLSID = "FreeFormPCurve",
+				points =
+				{
+					{ 0, 0, 0, 0.212121 },
+					{ 1, 1, 3.368421, 0 }
 				}
 			},
-			pcurve_period=1000
+			pcurve_period = 1000
 		}
 	},
 	{
@@ -652,39 +386,23 @@ events={
 			"ocean_green_top"
 		},
 		{
-			duration=5000,
-			target_type=ROOT,
-			spatialprops={
-				pos={
-					0,
-					-95.390495,
-					-8.387741
+			duration = 5000,
+			target_type = ROOT,
+			spatialprops =
+			{
+				pos = { 0, -95.390495, -8.387741 }
+			},
+			param_curve =
+			{
+				CLSID = "FreeFormPCurve",
+				points =
+				{
+					{ 0, 0, 0, 0 },
+					{ 0.496795, 1, 0, 0 },
+					{ 1, 0, 0, 0 }
 				}
 			},
-			param_curve={
-				CLSID="FreeFormPCurve",
-				points={
-					{
-						0,
-						0,
-						0,
-						0
-					},
-					{
-						0.496795,
-						1,
-						0,
-						0
-					},
-					{
-						1,
-						0,
-						0,
-						0
-					}
-				}
-			},
-			pcurve_period=10000
+			pcurve_period = 10000
 		}
 	},
 	{
@@ -694,39 +412,23 @@ events={
 			"ocean_green_btm"
 		},
 		{
-			duration=5000,
-			target_type=ROOT,
-			spatialprops={
-				pos={
-					0,
-					-170.690491,
-					-8.387741
+			duration = 5000,
+			target_type = ROOT,
+			spatialprops =
+			{
+				pos = { 0, -170.690491, -8.387741 }
+			},
+			param_curve =
+			{
+				CLSID = "FreeFormPCurve",
+				points =
+				{
+					{ 0, 0, 0, 0 },
+					{ 0.496795, 1, 0, 0 },
+					{ 1, 0, 0, 0 }
 				}
 			},
-			param_curve={
-				CLSID="FreeFormPCurve",
-				points={
-					{
-						0,
-						0,
-						0,
-						0
-					},
-					{
-						0.496795,
-						1,
-						0,
-						0
-					},
-					{
-						1,
-						0,
-						0,
-						0
-					}
-				}
-			},
-			pcurve_period=10000
+			pcurve_period = 10000
 		}
 	},	
 }
