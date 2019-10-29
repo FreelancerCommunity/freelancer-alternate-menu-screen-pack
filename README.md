@@ -21,5 +21,5 @@ On many modern systems, Freelancer will not generate a multiplayer ID correctly.
 
 ## CONTRIBUTING AND REUSING
 
-Please refer to the license file for information on re-using these screens. If you use them as they are in your mod, credit is appreciated. Note that these are intended as simple templates and teaching tools for modders looking to modify their own menu screens, so please feel free to use them as a template to work from!
+Please refer to the license file for information on re-using these screens. If you use them as they are in your mod, credit is appreciated. Note that these are intended as simple templates and teaching tools for modders looking to modify their own menu screens, so please feel free to use them as the basis for your own scripts!
 
