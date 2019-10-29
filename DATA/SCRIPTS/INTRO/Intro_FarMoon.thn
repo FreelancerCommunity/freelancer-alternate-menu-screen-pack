@@ -262,10 +262,18 @@ entities =
 			sparam = 0
 		}
 	},
-	}
+}
 
 events =
 {
+	{
+		0,
+		SET_CAMERA,
+		{
+			"monitor_1",
+			"camera_1"
+		}
+	},
 	{
 		0,
 		START_SPATIAL_PROP_ANIM,
@@ -304,8 +312,6 @@ events =
 			}
 		}
 	},
-	
-	
 	{
 		0,
 		START_PSYS,
@@ -316,14 +322,4 @@ events =
 			duration = 360
 		}
 	},
-	
-	{
-		0,
-		SET_CAMERA,
-		{
-			"monitor_1",
-			"camera_1"
-		}
-	},
-	
 }
