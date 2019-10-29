@@ -1,6 +1,6 @@
 --For orientation of objects, use this link to quickly do the maths on how much to rotate things: https://www.andre-gaschler.com/rotationconverter/
 
-duration = 500.622
+duration = 500.622 --Defines the duration of the scene. After this amount of time has passed, the scene will loop.
 entities =
 {
 	{
