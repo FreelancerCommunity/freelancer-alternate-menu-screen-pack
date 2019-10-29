@@ -33,8 +33,8 @@ entities =
 		usr_flg = 0,
 		spatialprops =
 		{
-			pos = { 0, 0, 0 },
-			orient =
+			pos = { 0, 0, 0 }, --This value defines the position of the object.
+			orient = --These values define the orientation of the object.
 			{
 				{ 1, 0, 0 },
 				{ 0, 1, 0 },
@@ -43,10 +43,10 @@ entities =
 		},
 		cameraprops =
 		{
-			fovh = 35,
+			fovh = 35, --Field of view
 			hvaspect = 1.333333,
-			nearplane = 1,
-			farplane = 1000000
+			nearplane = 1, --The closest the camera will render something. Anything closer than this value will not be rendered.
+			farplane = 1000000 --The furthest away the camera will render something. Anything further away than this value will not be rendered.
 		}
 	},
 	{
