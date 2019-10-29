@@ -6,7 +6,7 @@ Please note that you should be able to use this mod with vanilla Freelancer, as 
 ## INSTALLATION
 
 1. Download and install Freelancer Mod Manager 2.0 from [here](https://the-starport.net/freelancer/download/visit.php?cid=1&lid=2706)
-2. Download alt-menu-pack.flmod and open it.
+2. Download [alt-menu-pack.flmod](https://gitlab.com/IrateRedKite/freelancer-alternate-menu-screen-pack/raw/current/alt-menu-pack.flmod) and open it.
 3. Enable the Alternate Menu Screen Pack in Freelancer Mod Manager
 
 ## MULTIPLAYER
