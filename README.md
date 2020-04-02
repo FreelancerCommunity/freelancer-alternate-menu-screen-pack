@@ -6,10 +6,9 @@ Please note that you should be able to use this mod with vanilla Freelancer, as 
 ## INSTALLATION
 
 1. Download and install Freelancer Mod Manager 2.0 from [here](https://the-starport.net/freelancer/download/visit.php?cid=1&lid=2706)
-2. Download [alt-menu-pack.flmod](https://github.com/IrateRedKite/freelancer-alternate-menu-screen-pack/raw/current/alt-menu-pack.flmod) and open it.
+2. Download the latest release from [here](https://github.com/IrateRedKite/freelancer-alternate-menu-screen-pack/releases) and open it.
 3. Enable the Alternate Menu Screen Pack in Freelancer Mod Manager
 
 ## CONTRIBUTING AND REUSING
 
 Please refer to the license file for information on re-using these screens. If you use them as they are in your mod, credit is appreciated. Note that these are intended as simple templates and teaching tools for modders looking to modify their own menu screens, so please feel free to use them as the basis for your own scripts!
-
